@@ -16,6 +16,24 @@
         "type": "checkbox"
     },
     {
+        "property": "uc.hidecontext.movetab",
+        "label": "\ud83d\udd01 ⏭️ Hide the 'Move tab to start/end/profile' menu items",
+        "defaultValue": "false",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.khidebunch",
+        "label": "\ud83d\udd01 Hide a bunch of menu items K doesn't like to see",
+        "defaultValue": "false",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.changeworkspace",
+        "label": "\ud83d\udd01 ⬅️➡️ Hide the 'Move tab to workspace' menu items",
+        "defaultValue": "false",
+        "type": "checkbox"
+    },
+    {
         "property": "uc.hidecontext.separators",
         "label": "\u3030\ufe0f Hide all separators",
         "type": "checkbox"
@@ -69,12 +87,17 @@
     },
     {
         "property": "uc.hidecontext.closetab",
-        "label": "\ud83d\udcd1 Hide 'Close Tab' & 'Close Duplicate Tabs'",
+        "label": "\ud83d\udcd1 ✖️ Hide 'Close Tab'",
+        "type": "checkbox"
+    },
+    {
+        "property": "uc.hidecontext.closetabmultiple",
+        "label": "\ud83d\udcd1 ✖️✖️ Hide 'Close Multiple Tabs' & 'Close Duplicate Tabs'",
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.askchatbot",
-        "label": "\ud83d\udcd1 \ud83c\udf10 \ud83d\udd24 \ud83d\udd17 Hide 'Ask AI chatbot' options if you enabled the feature",
+        "label": "\ud83d\udcd1 \ud83c\udf10 \ud83d\udd24 \ud83d\udd17 🤖 Hide 'Ask AI chatbot' options if you enabled the feature",
         "type": "checkbox"
     },
     {

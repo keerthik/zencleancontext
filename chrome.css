@@ -7,7 +7,6 @@
   #tabContextMenu {
     :nth-child(22), /* Separator below "Duplicate Tab" */
     #context_bookmarkTab, #context_bookmarkSelectedTabs,
-    #context_moveTabOptions,
     #context_selectAllTabs, :nth-child(31), /* Separator below "Select All Tabs" */
     #context_selectedAllTabs, #toolbar-context-selectAllTabs,
     #context_closeTabOptions,
@@ -17,6 +16,12 @@
     #context_zenSplitTabs[disabled="true"],
     #context_closeDuplicateTabs[disabled]{
       display: none;
+    }
+    
+    @media -moz-pref("uc.fixcontext.customtestbox") {
+      #context_moveTabOptions {
+        display: none;
+      }
     }
     #context_toggleMuteTab,
     #context_toggleMuteSelectedTabs,

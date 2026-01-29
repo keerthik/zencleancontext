@@ -176,13 +176,13 @@
 }
 
 /* Hide "Move Tab" options */
-@media -moz-pref("uc.hidecontext.movetaboptions") {
+@media -moz-pref("uc.hidecontext.movetab") {
   #context_moveTabOptions {
     display: none !important;
   }
 }
 /* Hide "Move tab to workspace" menu items */
-@media -moz-pref("uc.fixcontext.customtestbox") {
+@media -moz-pref("uc.hidecontext.changeworkspace") {
   #context-zen-change-workspace-tab {
     display: none !important;
   }

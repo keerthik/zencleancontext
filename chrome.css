@@ -158,7 +158,7 @@
   }
 }
 /* Hide "Mute Tab" option */
-@media -moz-pref("uc.hidecontext.customtestbox") {
+@media -moz-pref("uc.hidecontext.mutetab") {
   #context_toggleMuteTab,
   #context_toggleMuteSelectedTabs,
   #context_playTab,

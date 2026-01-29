@@ -187,6 +187,17 @@
     display: none !important;
   }
 }
+/* Hide a bunch of menu items K doesn't like to see */
+@media -moz-pref("uc.hidecontext.khidebunch") {
+  #context_zen-add-essential,
+  #context_zen-remove-essential,
+  #context_zenNewFolder,
+  #context_askHuggingChat,
+  #context-share-tab,
+  #context_closeTabOptions {
+    display: none !important;
+  }
+}
 /* Hide “Open Tab/Link in New Container Tab” */
 @media -moz-pref("uc.hidecontext.newcontainer") {
   #context_reopenInContainer,

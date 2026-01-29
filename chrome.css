@@ -181,6 +181,12 @@
     display: none !important;
   }
 }
+/* Hide "Move tab to workspace" menu items */
+@media -moz-pref("uc.fixcontext.customtestbox") {
+  #context-zen-change-workspace-tab {
+    display: none !important;
+  }
+}
 /* Hide “Open Tab/Link in New Container Tab” */
 @media -moz-pref("uc.hidecontext.newcontainer") {
   #context_reopenInContainer,

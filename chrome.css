@@ -17,12 +17,15 @@
     #context_closeDuplicateTabs[disabled]{
       display: none;
     }
-    
-    @media -moz-pref("uc.fixcontext.customtestbox") {
-      #context_moveTabOptions {
-        display: none;
-      }
-    }
+/* Hide "Move tab to workspace" when preference is enabled */
+@media -moz-pref("uc.fixcontext.customtestbox") {
+  #tabContextMenu #context_moveTabOptions {
+    display: none !important;
+  }
+}
+
+@media -moz-pref("uc.fixcontext.ergonomicsfortabs") {
+  #tabContextMenu {
     #context_toggleMuteTab,
     #context_toggleMuteSelectedTabs,
     #context_zen-add-essential,
@@ -337,8 +340,9 @@
 /* Help me contribute on this, hit me up on github.com/KiKaraage/ZenMods/issues */
 
 /* PART 1: Setting inline padding and margin values */
-:root {
-  @media -moz-pref("uc.fixcontext.restoreicons") {
+/* PART 1: Setting inline padding and margin values */
+@media -moz-pref("uc.fixcontext.restoreicons") {
+  :root {
     --zen-contextmenu-menuitem-padding-inline: 5px !important;
     --zen-contextmenu-menuicon-margin-inline: 3px !important;
     --zen-contextmenu-menuitem-margin: 0px 2px !important;
@@ -350,8 +354,8 @@
   * For now this also affected items with existing paddings
   * Like on toolbar context menu, or on extension options
   * Help me fix this, hit me up on github.com/KiKaraage/ZenMods/issues */
-  .menu-text {
-    @media (-moz-platform: windows) {
+  @supports (-moz-platform: windows) {
+    .menu-text {
       padding-inline-start: 24px !important;
     }
   }   
@@ -395,28 +399,31 @@
   /* PART 5: Normalize left padding for options with checkboxes, like Compact Mode options
   * Still not applied to options like 'Tabs on the right' sadly
   * Help me fix this, hit me up on github.com/KiKaraage/ZenMods/issues */
-  @media (-moz-platform: windows) {
-    @media -moz-pref("uc.fixcontext.restoreicons") {
-      menupopup > menuitem[checked='true'] {
-        padding-inline-start: var(--zen-contextmenu-menuicon-margin-inline) !important;
-        > .menu-text {
-          padding: 0 !important;
-        }
-      }
-      menupopup > menuitem[checked='false'] {
-        padding-inline: calc(var(--zen-contextmenu-menuicon-margin-inline) + 0px) !important;
-      }
+}
+
+/* PART 5: Windows-specific padding for checkboxes */
+@media (-moz-platform: windows) and (-moz-pref("uc.fixcontext.restoreicons")) {
+  menupopup > menuitem[checked='true'] {
+    padding-inline-start: var(--zen-contextmenu-menuicon-margin-inline) !important;
+    > .menu-text {
+      padding: 0 !important;
     }
   }
+  menupopup > menuitem[checked='false'] {
+    padding-inline: calc(var(--zen-contextmenu-menuicon-margin-inline) + 0px) !important;
+  }
+}
 }
 
 /* PART 6: Specifying icons to apply for options in Unified Extensions Menu */
-@media not (-moz-platform: linux) {
-  @media -moz-pref("uc.fixcontext.restoreicons") {
-    .unified-extensions-context-menu-pin-to-toolbar {
-      --menu-image: url('chrome://browser/skin/zen-icons/pin.svg');
-    }
+/* PART 6: Specifying icons to apply for options in Unified Extensions Menu */
+@media not (-moz-platform: linux) and (-moz-pref("uc.fixcontext.restoreicons")) {
+  .unified-extensions-context-menu-pin-to-toolbar {
+    --menu-image: url('chrome://browser/skin/zen-icons/pin.svg');
   }
+}
+
+@media not (-moz-platform: linux) {
   .unified-extensions-context-menu-move-widget-down {
     --menu-image: url('chrome://browser/skin/zen-icons/arrow-down.svg');
   }

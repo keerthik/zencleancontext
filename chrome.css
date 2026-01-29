@@ -189,10 +189,9 @@
 }
 /* Hide a bunch of menu items K doesn't like to see */
 @media -moz-pref("uc.hidecontext.khidebunch") {
+  #zen-context-menu-new-folder,
   #context_zen-add-essential,
   #context_zen-remove-essential,
-  #context_zenNewFolder,
-  #context_askHuggingChat,
   #context-share-tab,
   #context_closeTabOptions {
     display: none !important;
@@ -216,13 +215,13 @@
 }
 /* Hide "Close Tabs" & "Close Duplicate Tabs"*/
 @media -moz-pref("uc.hidecontext.closetab") {
-  #context_closeTab,
-  #context_closeDuplicateTabs {
+  #context_closeTab {
     display: none !important;
   }
 }
 /* Hide "Close Multiple Tabs" */
 @media -moz-pref("uc.hidecontext.closemultiple") {
+  #context_closeDuplicateTabs,
   #context_closeTabOptions {
     display: none !important;
   }

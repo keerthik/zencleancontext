@@ -17,9 +17,11 @@
     #context_closeDuplicateTabs[disabled]{
       display: none;
     }
-/* Hide "Move tab to workspace" when preference is enabled */
+/* Hide "Move tab to workspace" and related options when preference is enabled */
 @media -moz-pref("uc.fixcontext.customtestbox") {
-  #tabContextMenu #context_moveTabOptions {
+  #tabContextMenu #context_moveTabOptions,
+  #context-zen-change-workspace-tab,
+  #context-zen-change-workspace-tab-menu-popup {
     display: none !important;
   }
 }
@@ -742,8 +744,8 @@
     --menu-image: url('chrome://browser/skin/zen-icons/pocket-outline.svg');
   }
   #context_ungroupTab,
-  #context_moveTabOptions,
-  #context-zen-change-workspace-tab,
+  #context_moveTabOptions:not([hidden]),
+  #context-zen-change-workspace-tab:not([hidden]),
   #context_zenReorderWorkspaces {
     --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
   }
@@ -792,8 +794,8 @@
       margin-inline-start: 24px!important;
     }
     #context_reopenInContainerPopupMenu,
-    #context-zen-change-workspace-tab-menu-popup,
-    #context_sendTabToDevicePopupMenu, #closeTabOptions, #moveTabOptionsMenu {
+    #context-zen-change-workspace-tab-menu-popup:not([hidden]),
+    #context_sendTabToDevicePopupMenu, #closeTabOptions, #moveTabOptionsMenu:not([hidden]) {
       menuitem:not(.menuitem-iconic) > .menu-text,
       menu > .menu-text {
         margin-inline-start: 0 !important;

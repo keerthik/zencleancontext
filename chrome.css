@@ -1,5 +1,101 @@
 /* Zen Context Menu v3.0 by KiKaraage */
 
+/* Hide context menu sections based on preferences */
+@media -moz-pref("uc.hidecontext.section-groups") {
+  #context_openANewTab,
+  #context_moveTabToNewGroup,
+  #context_moveSplitViewToNewGroup,
+  #zen-context-menu-new-folder,
+  #context_moveTabToGroup,
+  #context_ungroupTab,
+  #context_ungroupSplitView,
+  #context_moveTabToSplitView,
+  #context_separateSplitView {
+    display: none !important;
+  }
+}
+
+@media -moz-pref("uc.hidecontext.section-reload") {
+  #context_reloadTab,
+  #context_reloadSelectedTabs,
+  #context_playTab,
+  #context_playSelectedTabs,
+  #context_toggleMuteTab,
+  #context_toggleMuteSelectedTabs,
+  #context_zen-add-essential,
+  #context_zen-remove-essential {
+    display: none !important;
+  }
+}
+
+@media -moz-pref("uc.hidecontext.section-customize") {
+  #context_zen-edit-tab-title,
+  #context_zen-edit-tab-icon {
+    display: none !important;
+  }
+}
+
+@media -moz-pref("uc.hidecontext.section-pintab") {
+  #context_pinTab,
+  #context_unpinTab,
+  #context_pinSelectedTabs,
+  #context_unpinSelectedTabs,
+  #context_unloadTab,
+  #context_zenSplitTabs,
+  #context_duplicateTab,
+  #context_duplicateTabs {
+    display: none !important;
+  }
+}
+
+@media -moz-pref("uc.hidecontext.section-aichat") {
+  #context_askChat {
+    display: none !important;
+  }
+}
+
+@media -moz-pref("uc.hidecontext.section-bookmarks") {
+  #context_bookmarkSelectedTabs,
+  #context_bookmarkTab,
+  #context_addNote,
+  #context_editNote,
+  .share-tab-url-item,
+  #context_reopenInContainer,
+  #context_selectAllTabs {
+    display: none !important;
+  }
+}
+
+@media -moz-pref("uc.hidecontext.section-senddevice") {
+  #context_sendTabToDevice,
+  #context_sendTabToDeviceSeparator {
+    display: none !important;
+  }
+}
+
+@media -moz-pref("uc.hidecontext.section-close") {
+  #context_closeTab,
+  #context_closeDuplicateTabs,
+  #context_closeTabOptions,
+  #context_undoCloseTab {
+    display: none !important;
+  }
+}
+
+@media -moz-pref("uc.hidecontext.section-fullscreen") {
+  #context_fullscreenAutohide,
+  #context_fullscreenExit {
+    display: none !important;
+  }
+}
+
+@media -moz-pref("uc.hidecontext.section-pinnedtab") {
+  #context_zen-replace-pinned-url-with-current,
+  #context_zen-reset-pinned-tab {
+    display: none !important;
+  }
+}
+
 /* Fix ergonomics for tab context menu by applying some reorderings 
  * plus hiding disabled options and some separators
  * Applied by default when enabling Zen Context Menu mod */

@@ -5,8 +5,3 @@
 
 
 $ New-Item -ItemType Junction -Path "C:\Users\keert\AppData\Roaming\zen\Profiles\z1nlnhfw.Default (alpha)\chrome\zen-themes\korc_custom" -Target "."
-
-  #context_zen-add-essential,
-  #context_zen-remove-essential,
-  #context_askHuggingChat,
-  #context-share-tab,

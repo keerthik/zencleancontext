@@ -1,5 +1,65 @@
 [
     {
+        "property": "uc.hidecontext.section-groups",
+        "label": "📁 Hide 'Groups & Organization' section (New Tab, Groups, Folders, Split View)",
+        "type": "checkbox",
+        "defaultValue": "false"
+    },
+    {
+        "property": "uc.hidecontext.section-reload",
+        "label": "🔄 Hide 'Reload & Playback' section (Reload, Play, Mute, Essentials)",
+        "type": "checkbox",
+        "defaultValue": "false"
+    },
+    {
+        "property": "uc.hidecontext.section-customize",
+        "label": "✏️ Hide 'Tab Customization' section (Change Label, Change Icon)",
+        "type": "checkbox",
+        "defaultValue": "false"
+    },
+    {
+        "property": "uc.hidecontext.section-pintab",
+        "label": "📌 Hide 'Pin & Tab Management' section (Pin/Unpin, Unload, Split, Duplicate)",
+        "type": "checkbox",
+        "defaultValue": "false"
+    },
+    {
+        "property": "uc.hidecontext.section-aichat",
+        "label": "🤖 Hide 'AI Chat' section (Ask Chat menu)",
+        "type": "checkbox",
+        "defaultValue": "false"
+    },
+    {
+        "property": "uc.hidecontext.section-bookmarks",
+        "label": "📑 Hide 'Bookmarks & Navigation' section (Bookmark, Notes, Move Tab, Share, Containers, Select All)",
+        "type": "checkbox",
+        "defaultValue": "false"
+    },
+    {
+        "property": "uc.hidecontext.section-senddevice",
+        "label": "📱 Hide 'Send to Device' section",
+        "type": "checkbox",
+        "defaultValue": "false"
+    },
+    {
+        "property": "uc.hidecontext.section-close",
+        "label": "❌ Hide 'Close Actions' section (Close Tab, Close Duplicate, Close Multiple, Reopen)",
+        "type": "checkbox",
+        "defaultValue": "false"
+    },
+    {
+        "property": "uc.hidecontext.section-fullscreen",
+        "label": "🖥️ Hide 'Fullscreen' section (Hide Toolbars, Exit Full Screen)",
+        "type": "checkbox",
+        "defaultValue": "false"
+    },
+    {
+        "property": "uc.hidecontext.section-pinnedtab",
+        "label": "📍 Hide 'Pinned Tab Actions' section (Replace URL, Reset Pinned Tab)",
+        "type": "checkbox",
+        "defaultValue": "false"
+    },
+    {
         "property": "widget.macos.native-context-menus",
         "label": "\u203c\ufe0f Uncheck to enable this mod in macOS, overriding native context menu. (Check this again \u2705 before disabling/removing this mod)",
         "type": "checkbox",

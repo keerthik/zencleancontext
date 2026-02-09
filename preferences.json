@@ -3,7 +3,7 @@
         "property": "uc.hidecontext.section-groups",
         "label": "📁 Hide 'Groups & Organization' section (New Tab, Groups, Folders, Split View)",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": "true"
     },
     {
         "property": "uc.hidecontext.section-reload",
@@ -15,7 +15,7 @@
         "property": "uc.hidecontext.section-customize",
         "label": "✏️ Hide 'Tab Customization' section (Change Label, Change Icon)",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": "true"
     },
     {
         "property": "uc.hidecontext.section-pintab",
@@ -27,13 +27,13 @@
         "property": "uc.hidecontext.section-aichat",
         "label": "🤖 Hide 'AI Chat' section (Ask Chat menu)",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": "true"
     },
     {
         "property": "uc.hidecontext.section-bookmarks",
-        "label": "📑 Hide 'Bookmarks & Navigation' section (Bookmark, Notes, Move Tab, Share, Containers, Select All)",
+        "label": "📑 Hide 'Navigation' section except Move Tab (Bookmark, Notes, Share, Containers, Select All)",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": "true"
     },
     {
         "property": "uc.hidecontext.section-senddevice",
@@ -45,7 +45,7 @@
         "property": "uc.hidecontext.section-close",
         "label": "❌ Hide 'Close Actions' section (Close Tab, Close Duplicate, Close Multiple, Reopen)",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": "true"
     },
     {
         "property": "uc.hidecontext.section-fullscreen",

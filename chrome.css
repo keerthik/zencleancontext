@@ -1,5 +1,12 @@
 /* Zen Context Menu v3.0 by KiKaraage */
 
+#tabContextMenu > menuseparator::before {
+  border-top: none !important;
+}
+#tabContextMenu > menuseparator {
+  padding-block: 0px !important;
+}
+
 /* Hide context menu sections based on preferences */
 @media -moz-pref("uc.hidecontext.section-groups") {
   #context_openANewTab,

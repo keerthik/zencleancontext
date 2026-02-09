@@ -20,7 +20,6 @@
   #context_reloadSelectedTabs,
   #context_playTab,
   #context_playSelectedTabs,
-  #context_toggleMuteTab,
   #context_toggleMuteSelectedTabs,
   #context_zen-add-essential,
   #context_zen-remove-essential {
@@ -36,12 +35,8 @@
 }
 
 @media -moz-pref("uc.hidecontext.section-pintab") {
-  #context_pinTab,
-  #context_unpinTab,
   #context_pinSelectedTabs,
   #context_unpinSelectedTabs,
-  #context_unloadTab,
-  #context_zenSplitTabs,
   #context_duplicateTab,
   #context_duplicateTabs {
     display: none !important;
@@ -96,9 +91,6 @@
   }
 }
 
-/* Fix ergonomics for tab context menu by applying some reorderings 
- * plus hiding disabled options and some separators
- * Applied by default when enabling Zen Context Menu mod */
 @media -moz-pref("uc.fixcontext.ergonomicsfortabs") {
   #tabContextMenu {
     #context_toggleMuteTab,
@@ -277,22 +269,7 @@
     display: none !important;
   }
 }
-/* Hide "Move tab to workspace" menu items */
-@media -moz-pref("uc.hidecontext.changeworkspace") {
-  #context-zen-change-workspace-tab {
-    display: none !important;
-  }
-}
-/* Hide a bunch of menu items K doesn't like to see */
-@media -moz-pref("uc.hidecontext.khidebunch") {
-  #zen-context-menu-new-folder,
-  #context_zen-add-essential,
-  #context_zen-remove-essential,
-  #context-share-tab,
-  #context_closeTabOptions {
-    display: none !important;
-  }
-}
+
 /* Hide “Open Tab/Link in New Container Tab” */
 @media -moz-pref("uc.hidecontext.newcontainer") {
   #context_reopenInContainer,
@@ -968,3 +945,4 @@
     }
   }       
 }
+

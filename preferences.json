@@ -3,11 +3,11 @@
         "property": "uc.hidecontext.section-groups",
         "label": "📁 Hide 'Groups & Organization' section (New Tab, Groups, Folders, Split View)",
         "type": "checkbox",
-        "defaultValue": "true"
+        "defaultValue": "false"
     },
     {
         "property": "uc.hidecontext.section-reload",
-        "label": "🔄 Hide 'Reload & Playback' section (Reload, Play, Mute, Essentials)",
+        "label": "🔄 Hide 'Reload & Playback' section (Reload, Play, Essentials). Keep: Mute",
         "type": "checkbox",
         "defaultValue": "false"
     },
@@ -15,11 +15,11 @@
         "property": "uc.hidecontext.section-customize",
         "label": "✏️ Hide 'Tab Customization' section (Change Label, Change Icon)",
         "type": "checkbox",
-        "defaultValue": "true"
+        "defaultValue": "false"
     },
     {
         "property": "uc.hidecontext.section-pintab",
-        "label": "📌 Hide 'Pin & Tab Management' section (Pin/Unpin, Unload, Split, Duplicate)",
+        "label": "📌 Hide 'Pin & Tab Management' section (Pin/Unpin (group), Duplicate). Keep: Split (group), Pin/Unpin (single), Unload",
         "type": "checkbox",
         "defaultValue": "false"
     },
@@ -31,9 +31,9 @@
     },
     {
         "property": "uc.hidecontext.section-bookmarks",
-        "label": "📑 Hide 'Navigation' section except Move Tab (Bookmark, Notes, Share, Containers, Select All)",
+        "label": "📑 Hide 'Navigation' section (Bookmark, Notes, Share, Containers, Select All), Keep: Move Tab",
         "type": "checkbox",
-        "defaultValue": "true"
+        "defaultValue": "false"
     },
     {
         "property": "uc.hidecontext.section-senddevice",
@@ -45,7 +45,7 @@
         "property": "uc.hidecontext.section-close",
         "label": "❌ Hide 'Close Actions' section (Close Tab, Close Duplicate, Close Multiple, Reopen)",
         "type": "checkbox",
-        "defaultValue": "true"
+        "defaultValue": "false"
     },
     {
         "property": "uc.hidecontext.section-fullscreen",
@@ -78,18 +78,6 @@
     {
         "property": "uc.hidecontext.movetab",
         "label": "\ud83d\udd01 ⏭️ Hide the 'Move tab to start/end/profile' menu items",
-        "defaultValue": "false",
-        "type": "checkbox"
-    },
-    {
-        "property": "uc.hidecontext.khidebunch",
-        "label": "\ud83d\udd01 🚫 Hide a bunch of menu items K doesn't like to see",
-        "defaultValue": "false",
-        "type": "checkbox"
-    },
-    {
-        "property": "uc.hidecontext.changeworkspace",
-        "label": "\ud83d\udd01 ⬅️➡️ Hide the 'Move tab to workspace' menu items",
         "defaultValue": "false",
         "type": "checkbox"
     },

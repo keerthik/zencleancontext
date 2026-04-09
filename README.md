@@ -6,3 +6,11 @@
 This version makes a few opinionated cleanups. Here's what it looks like when I use it 
 (I care about spaces and profiles, but not really most other tab context menu options):
 ![simplified tab context menu](image.png)
+
+As of this commit, this theme isn't on the theme store.
+
+To use this mod in your zen install:
+- Check out this repo or extract the downloadable zip archive
+- Move the folder inside your zen installations profile/chrome
+    - Windows: `C:/Users/<user-folder>/AppData/Roaming/zen/Profiles/<profile-folder>/chrome/zen-themes/`
+    - OSX: `~/Library/Application Support/zen/Profiles/<profile-folder>/chrome/zen-themes/`

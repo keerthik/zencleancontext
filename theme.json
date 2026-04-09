@@ -1,0 +1,17 @@
+{
+    "id": "korc_custom",
+    "name": "Zen Clean Context Menu",
+    "description": "Declutter your right click menu, hide options you don't need",
+    "homepage": "https://github.com/keerthik/zencleancontext/",
+    "style": "chrome.css",
+    "readme": "./readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/81fcd6b3-f014-4796-988f-6c3cb3874db8/image.png",
+    "author": "kOrc",
+    "version": "3.1",
+    "preferences": "./preferences.json",
+    "tags": [
+        "context menu"
+    ],
+    "createdAt": "2024-10-06",
+    "updatedAt": "2026-02-08"
+}

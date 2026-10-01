@@ -1,6 +1,6 @@
 ## Key CSS Selectors
 
-Zen 1.22.3b, 2026/10/01. Items marked [zen] are injected by Zen's JS and only exist while that feature is enabled.
+Zen 1.22.3b, 2026/10/01, checked against a devtools DOM dump. Items marked [zen] are injected by Zen's JS and only exist while that feature is enabled.
 See [treeref.md](./treeref.md) for the DOM order and [toolbar.html](./toolbar.html) for the markup.
 
 ### Primary Container
@@ -26,7 +26,7 @@ See [treeref.md](./treeref.md) for the DOM order and [toolbar.html](./toolbar.ht
 - `#context_duplicateTab` / `#context_duplicateTabs`
 
 ### Essentials & Tab Customization [zen] (inserted just before `#context_pinTab`)
-- `#context_zen-add-essential` / `#context_zen-remove-essential`
+- `#context_zen-add-essential` / `#context_zen-remove-essential` - add-essential carries a `badge` attribute with the slot count (e.g. "0 / 12")
 - `#context_zen-edit-tab-title` ("Change Label…") / `#context_zen-edit-tab-icon` ("Change Icon…")
 - Two unnamed separators wrap the edit items: `#context_zen-remove-essential + menuseparator` and `#context_zen-edit-tab-icon + menuseparator`
 
@@ -41,13 +41,13 @@ See [treeref.md](./treeref.md) for the DOM order and [toolbar.html](./toolbar.ht
 - `#moveTabOptionsMenu` - its popup: `#context_moveToStart`, `#context_moveToEnd`, `#context_openTabInWindow`, `#moveTabSeparator`, plus `#context_moveTabToGroupSeparator` and `#context_selectAllSeparator` (both hidden in the classic layout)
 - `.zen-workspace-context-menu-item` - one per other space (and a separator with the same class), prepended to `#moveTabOptionsMenu` on open; `[zen-workspace-id]` carries the space id
 - `menuitem[profileid]` - per-profile entries inserted after `#moveTabSeparator`
-- `.share-tab-url-item` - lazily created share submenu, placed right after `#context_moveTabOptions`
+- `.share-tab-url-item` - lazily created share submenu, placed right after `#context_moveTabOptions`. Its unnamed popup holds `.share-copy-link`, `.share-qrcode-item` (both `.menuitem-iconic` with an `image` attribute), an unnamed separator, and `.share-windows-item` ("More Options")
 - `#context_reopenInContainer` / `#context_reopenInContainerPopupMenu` - container submenu; entries are `.menuitem-iconic.identity-color-<color>.identity-icon-<icon>`
 - `#context_selectAllTabs`
 
 ### Sending (ends at `#context_sendTabToDeviceSeparator`)
 - `#context_shareSelectedTabs` ("Create Shareable Link") / `#context_shareSelectedTabsSeparator`
-- `#context_sendTabToDevice.sync-ui-item` / `#context_sendTabToDevicePopupMenu` - device entries are `.sync-menuitem.sendtab-target`
+- `#context_sendTabToDevice.sync-ui-item` / `#context_sendTabToDevicePopupMenu` - device entries are `.sync-menuitem.sendtab-target[clientType]` (`phone` / `desktop`); "Send to All Devices" and "Manage Devices…" share the same classes
 
 ### Close Actions
 - `#context_closeTab`
@@ -74,6 +74,12 @@ See [treeref.md](./treeref.md) for the DOM order and [toolbar.html](./toolbar.ht
 
 ### Notes
 - Ids used in chrome.css that no longer exist anywhere in 1.22.3b (checked against every file in both `omni.ja` archives): `context-pocket`, `context-savelinktopocket`, `context-zen-change-workspace-tab`, `context_selectedAllTabs`, `context_zenDeleteWebPanel`, `context_zenOpenNewTabWebPanel`, `context_zenOpenWorkspace`, `context_zenOpenWorkspacePanel`, `context_zenTabActions`, `context_zenToggleMuteWebPanel`, `context_zenWebPanelContextInContainer`, `zen-sidebar-web-panel-pinned`. Rules targeting them are harmless no-ops.
+- Classes used in chrome.css that no longer exist: `.menu-iconic-left` (line 185), `.menu-iconic-icon` (lines 574, 577), `.menu-iconic-text` (lines 938, 939). Menu items now render `img.menu-icon` and `label.menu-text`, so those rules (checkbox icon margin, PiP and loop icons, text padding) do nothing.
+- Preference names that don't match between chrome.css and preferences.json:
+  - chrome.css reads `uc.hidecontext.closemultiple`, but the Settings toggle writes `uc.hidecontext.closetabmultiple`, so "Hide Close Multiple Tabs" has no effect.
+  - chrome.css reads `uc.hidecontext.newtab`, which has no toggle in preferences.json.
+  - `uc.hidecontext.unloadactions` ("Hide Unload Tabs") has a toggle but no rule in chrome.css.
+  - `widget.macos.native-context-menus` is also declared but not read by chrome.css. That is intended, because it is a Firefox pref the toggle flips directly.
 - `#ContentSelectDropdown` is not in the tab menu tree but is still live. The toolkit creates it at runtime (`SelectParent.sys.mjs`) as the menulist for web page `<select>` dropdowns. chrome.css uses it in `:not(...)` to keep the icon-padding rules off those dropdowns, so keep it.
 - New since 1.18.5b: `#context_zenMoveToFolder`, `#context_zenShareSplitView`, `#context_reverseSplitView`, `#context_askChatSummarize`, `#context_shareSelectedTabs`, `#context_zen-edit-pinned-page` / `#context_zen-edit-pinned-url`, `#context_zen-add-domain-to-routing`, and the named section separators.
 - Firefox's MenuSectionLayout (tab-context-menu.js) would reorder the menu on first open, but in Zen 1.22.3b it throws and leaves the DOM untouched because Zen's injected items are not declared in its layout. DOM order is therefore the authored order plus the injection points above. If Zen adds its items to that layout in a later release, the order will change.

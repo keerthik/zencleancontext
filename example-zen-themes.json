@@ -1,0 +1,12 @@
+{
+    "korc_custom": {
+        "id": "korc_custom",
+        "name": "Zen Clean Context Menu",
+        "description": "Declutter your right click menu, hide options you don't need",
+        "homepage": "https://github.com/keerthik/zencleancontext/",
+        "author": "kOrc",
+        "version": "3.1",
+        "preferences": "preferences.json",
+        "enabled": true
+    }
+}

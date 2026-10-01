@@ -1,97 +1,78 @@
 ## Key CSS Selectors
 
+Zen 1.22.3b, 2026/10/01. Items marked [zen] are injected by Zen's JS and only exist while that feature is enabled.
+See [treeref.md](./treeref.md) for the DOM order and [toolbar.html](./toolbar.html) for the markup.
+
 ### Primary Container
-- `#tabContextMenu` - Main context menu popup container
+- `#tabContextMenu` - Main tab context menu popup
 
-### Tab Management Items
-- `#context_openANewTab` - New tab below action
-- `#zen-context-menu-new-folder` - New folder action
-- `#context_moveTabToGroup` - Move tab to group submenu
-- `#context_moveTabToGroupPopupMenu` - Group submenu popup
-- `#context_moveTabToNewGroup` - New group creation
-- `#context_moveTabToSavedGroup` - Closed groups submenu
+### Open & Organize (top section, ends at `#context_openAndOrganizeSeparator`)
+- `#context_openANewTab` - New tab below / to the right
+- `#context_moveTabToNewGroup` / `#context_moveSplitViewToNewGroup` - Add tab / split view to a new group
+- `#context_zenMoveToFolder` [zen] - "Move to Folder" submenu; its unnamed `menupopup` gets one item per folder plus `#zen-context-menu-new-folder`
+- `#context_moveTabToGroup` - "Add Tab to Group" submenu
+- `#context_moveTabToGroupPopupMenu` - its popup: `#context_moveTabToGroupNewGroup`, one `menuitem[tab-group-id]` per open group between `#open-tab-groups-separator-upper` / `-lower`, and `#context_moveTabToSavedGroup` ("Closed Groups") with `#context_moveTabToSavedGroupPopupMenu`
+- `#context_ungroupTab` / `#context_ungroupSplitView` - Remove from group
+- `#context_zenSplitTabs` [zen] - Add split view / split out / join tabs
+- `#context_zenShareSplitView` [zen] - Share split view
+- `#context_moveTabToSplitView` / `#context_separateSplitView` / `#context_reverseSplitView` - Firefox split view items (no `.badge-new` any more)
 
-### Split View & Groups
-- `#context_moveTabToSplitView` - Move to split view (has `.badge-new`)
-- `#context_separateSplitView` - Separate split view (has `.badge-new`)
-- `#context_moveSplitViewToNewGroup` - Add split view to group
-- `#context_ungroupTab` - Remove tab from group
-- `#context_ungroupSplitView` - Remove split view from group
+### Tab Actions (ends at `#context_tabStateSeparator`)
+- `#context_reloadTab` / `#context_reloadSelectedTabs`
+- `#context_playTab` / `#context_playSelectedTabs`
+- `#context_toggleMuteTab` / `#context_toggleMuteSelectedTabs`
+- `#context_pinTab` / `#context_unpinTab` / `#context_pinSelectedTabs` / `#context_unpinSelectedTabs`
+- `#context_unloadTab`
+- `#context_duplicateTab` / `#context_duplicateTabs`
 
-### Zen-specific Features
-- `#context_zen-add-essential` - Add to essentials
-- `#context_zen-remove-essential` - Remove from essentials
-- `#context_zen-edit-tab-title` - Edit tab title
-- `#context_zen-edit-tab-icon` - Edit tab icon
-- `#context_zen-replace-pinned-url-with-current` - Replace pinned URL
-- `#context_zen-reset-pinned-tab` - Reset pinned tab
+### Essentials & Tab Customization [zen] (inserted just before `#context_pinTab`)
+- `#context_zen-add-essential` / `#context_zen-remove-essential`
+- `#context_zen-edit-tab-title` ("Change Label…") / `#context_zen-edit-tab-icon` ("Change Icon…")
+- Two unnamed separators wrap the edit items: `#context_zen-remove-essential + menuseparator` and `#context_zen-edit-tab-icon + menuseparator`
 
-### Workspace Selectors
-- `.zen-workspace-context-menu-item` - Workspace menu items in Move Tab submenu
+### AI (ends at `#context_aiSeparator`)
+- `#context_askChat` - "Ask <chatbot>" submenu, popup built lazily
+- `#context_askChatSummarize` - "Summarize Page" (hidden in the classic layout)
 
-### Tab Actions
-- `#context_reloadTab` / `#context_reloadSelectedTabs` - Reload actions
-- `#context_playTab` / `#context_playSelectedTabs` - Play media actions
-- `#context_toggleMuteTab` / `#context_toggleMuteSelectedTabs` - Mute actions
-- `#context_pinTab` / `#context_unpinTab` - Pin/unpin actions
-- `#context_pinSelectedTabs` / `#context_unpinSelectedTabs` - Batch pin actions
-- `#context_duplicateTab` / `#context_duplicateTabs` - Duplicate actions
-- `#context_zenSplitTabs` - Split tabs action
-- `#context_unloadTab` - Unload tabs action
+### Tab Tools (ends at `#context_tabToolsSeparator`)
+- `#context_bookmarkTab` / `#context_bookmarkSelectedTabs`
+- `#context_addNote` / `#context_editNote`
+- `#context_moveTabOptions` - "Move Tab" submenu
+- `#moveTabOptionsMenu` - its popup: `#context_moveToStart`, `#context_moveToEnd`, `#context_openTabInWindow`, `#moveTabSeparator`, plus `#context_moveTabToGroupSeparator` and `#context_selectAllSeparator` (both hidden in the classic layout)
+- `.zen-workspace-context-menu-item` - one per other space (and a separator with the same class), prepended to `#moveTabOptionsMenu` on open; `[zen-workspace-id]` carries the space id
+- `menuitem[profileid]` - per-profile entries inserted after `#moveTabSeparator`
+- `.share-tab-url-item` - lazily created share submenu, placed right after `#context_moveTabOptions`
+- `#context_reopenInContainer` / `#context_reopenInContainerPopupMenu` - container submenu; entries are `.menuitem-iconic.identity-color-<color>.identity-icon-<icon>`
+- `#context_selectAllTabs`
 
-### Bookmarks & Notes
-- `#context_bookmarkTab` / `#context_bookmarkSelectedTabs` - Bookmark actions
-- `#context_addNote` / `#context_editNote` - Note actions
-
-### Move Tab Options
-- `#context_moveTabOptions` - Move tab submenu container
-- `#moveTabOptionsMenu` - Move tab popup menu
-- `#context_moveToStart` / `#context_moveToEnd` - Position movement
-- `#context_openTabInWindow` - Move to new window
-
-### Container Tabs
-- `#context_reopenInContainer` - Container tab menu
-- `#context_reopenInContainerPopupMenu` - Container submenu
-- `.identity-color-blue` / `.identity-color-orange` / `.identity-color-green` / `.identity-color-pink` - Container colors
-- `.identity-icon-fingerprint` / `.identity-icon-briefcase` / `.identity-icon-dollar` / `.identity-icon-cart` - Container icons
-
-### Send to Device (Sync)
-- `#context_sendTabToDevice` - Send to device menu
-- `#context_sendTabToDevicePopupMenu` - Device list popup
-- `.sync-ui-item` - Sync-related items
-- `.sync-menuitem` - Individual sync menu items
-- `.sendtab-target` - Send target devices
+### Sending (ends at `#context_sendTabToDeviceSeparator`)
+- `#context_shareSelectedTabs` ("Create Shareable Link") / `#context_shareSelectedTabsSeparator`
+- `#context_sendTabToDevice.sync-ui-item` / `#context_sendTabToDevicePopupMenu` - device entries are `.sync-menuitem.sendtab-target`
 
 ### Close Actions
-- `#context_closeTab` - Close single tab
-- `#context_closeDuplicateTabs` - Close duplicate tabs
-- `#context_closeTabOptions` - Close multiple tabs submenu
-- `#closeTabOptions` - Close options popup
-- `#context_closeTabsToTheStart` / `#context_closeTabsToTheEnd` - Directional close
-- `#context_closeOtherTabs` - Close all other tabs
-- `#context_undoCloseTab` - Reopen closed tab
+- `#context_closeTab`
+- `#context_closeDuplicateTabs`
+- `#context_closeTabOptions` / `#closeTabOptions` - "Close Multiple Tabs" submenu: `#context_closeTabsToTheStart`, `#context_closeTabsToTheEnd`, `#context_closeOtherTabs`
+- `#context_undoCloseTab`
+- `#context_zen-add-domain-to-routing` [zen] - "Add Route for Domain", after `#context_undoCloseTab`, preceded by an unnamed separator (`#context_undoCloseTab + menuseparator`)
 
-### Fullscreen Context
-- `#context_fullscreenAutohide` - Auto-hide toolbars toggle
-- `#context_fullscreenExit` - Exit fullscreen
-- `.fullscreen-context-autohide` - Fullscreen-specific styling
+### Fullscreen (starts at `#context_fullscreenSeparator`)
+- `#context_fullscreenAutohide.fullscreen-context-autohide` / `#context_fullscreenExit`
 
-### Other Actions
-- `.share-tab-url-item` - Share tab action
-- `#context_selectAllTabs` - Select all tabs
-- `#context_askChat` - AI chat integration (when visible)
+### Pinned / Essential Tab Tail [zen] (appended at the very end of the menu)
+- `#context_zen-pinned-tab-separator`
+- `#context_zen-edit-pinned-page` - "Edit Pinned URL" submenu holding `#context_zen-replace-pinned-url-with-current` and `#context_zen-edit-pinned-url`
+- `#context_zen-reset-pinned-tab`
 
-### Common Element Classes (within menu items)
-- `.menu-icon` - Icon images
-- `.menu-text` - Text labels
-- `.menu-highlightable-text` - Highlighted text with accesskeys
-- `.menu-accel` - Keyboard accelerator display
-- `.accesskey` - Accesskey character highlighting
-- `.badge-new` - "New" badge indicator
+### Common Element Classes (inside every item)
+- `.menu-icon`, `.menu-text`, `.menu-highlightable-text`, `.accesskey`, `.menu-accel`
 
 ### Separators
-- `menuseparator` - Visual dividers between menu sections
-- `#open-tab-groups-separator-upper` / `#open-tab-groups-separator-lower` - Group section dividers
-- `#context_sendTabToDeviceSeparator` - Sync section divider
-- `#context_zen-pinned-tab-separator` - Pinned tab section divider
-- `#moveTabSeparator` - Move tab section divider
+- Named, top level: `#context_openAndOrganizeSeparator`, `#context_tabStateSeparator`, `#context_aiSeparator`, `#context_tabToolsSeparator`, `#context_shareSelectedTabsSeparator`, `#context_sendTabToDeviceSeparator.sync-ui-item`, `#context_fullscreenSeparator`, `#context_zen-pinned-tab-separator`
+- Named, inside submenus: `#open-tab-groups-separator-upper` / `-lower`, `#moveTabSeparator`, `#context_moveTabToGroupSeparator`, `#context_selectAllSeparator`
+- Unnamed (Zen injections), target positionally: `#context_zen-remove-essential + menuseparator`, `#context_zen-edit-tab-icon + menuseparator`, `#context_undoCloseTab + menuseparator`, `#context_zenMoveToFolder menuseparator`
+
+### Notes
+- Ids used in chrome.css that no longer exist anywhere in 1.22.3b: `ContentSelectDropdown`, `context-pocket`, `context-savelinktopocket`, `context-zen-change-workspace-tab`, `context_selectedAllTabs`, `context_zenDeleteWebPanel`, `context_zenOpenNewTabWebPanel`, `context_zenOpenWorkspace`, `context_zenOpenWorkspacePanel`, `context_zenTabActions`, `context_zenToggleMuteWebPanel`, `context_zenWebPanelContextInContainer`, `zen-sidebar-web-panel-pinned`. Rules targeting them are harmless no-ops.
+- New since 1.18.5b: `#context_zenMoveToFolder`, `#context_zenShareSplitView`, `#context_reverseSplitView`, `#context_askChatSummarize`, `#context_shareSelectedTabs`, `#context_zen-edit-pinned-page` / `#context_zen-edit-pinned-url`, `#context_zen-add-domain-to-routing`, and the named section separators.
+- Firefox's MenuSectionLayout (tab-context-menu.js) would reorder the menu on first open, but in Zen 1.22.3b it throws and leaves the DOM untouched because Zen's injected items are not declared in its layout. DOM order is therefore the authored order plus the injection points above. If Zen adds its items to that layout in a later release, the order will change.

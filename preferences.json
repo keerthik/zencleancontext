@@ -3,67 +3,67 @@
         "property": "uc.hidecontext.section-groups",
         "label": "📁 Hide 'Groups & Organization' section (New Tab, Groups, Folders, Split View)",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": false
     },
     {
         "property": "uc.hidecontext.section-reload",
         "label": "🔄 Hide 'Reload & Playback' section (Reload, Play, Essentials). Keep: Mute",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": false
     },
     {
         "property": "uc.hidecontext.section-customize",
         "label": "✏️ Hide 'Tab Customization' section (Change Label, Change Icon)",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": false
     },
     {
         "property": "uc.hidecontext.section-pintab",
         "label": "📌 Hide 'Pin & Tab Management' section (Pin/Unpin (group), Duplicate). Keep: Split (group), Pin/Unpin (single), Unload",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": false
     },
     {
         "property": "uc.hidecontext.section-aichat",
         "label": "🤖 Hide 'AI Chat' section (Ask Chat menu)",
         "type": "checkbox",
-        "defaultValue": "true"
+        "defaultValue": true
     },
     {
         "property": "uc.hidecontext.section-bookmarks",
         "label": "📑 Hide 'Navigation' section (Bookmark, Notes, Share, Containers, Select All), Keep: Move Tab",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": false
     },
     {
         "property": "uc.hidecontext.section-senddevice",
         "label": "📱 Hide 'Send to Device' section",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": false
     },
     {
         "property": "uc.hidecontext.section-close",
         "label": "❌ Hide 'Close Actions' section (Close Tab, Close Duplicate, Close Multiple, Reopen)",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": false
     },
     {
         "property": "uc.hidecontext.section-fullscreen",
         "label": "🖥️ Hide 'Fullscreen' section (Hide Toolbars, Exit Full Screen)",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": false
     },
     {
         "property": "uc.hidecontext.section-pinnedtab",
         "label": "📍 Hide 'Pinned Tab Actions' section (Replace URL, Reset Pinned Tab)",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": false
     },
     {
         "property": "widget.macos.native-context-menus",
         "label": "\u203c\ufe0f Uncheck to enable this mod in macOS, overriding native context menu. (Check this again \u2705 before disabling/removing this mod)",
         "type": "checkbox",
-        "defaultValue": "false",
+        "defaultValue": false,
         "disabledOn": [
             "windows",
             "linux"
@@ -72,13 +72,13 @@
     {
         "property": "uc.fixcontext.ergonomicsfortabs",
         "label": "\ud83d\udd01 Reorder options for tab context menu to improve ergonomics (enabled by default)",
-        "defaultValue": "true",
+        "defaultValue": true,
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.movetab",
         "label": "\ud83d\udd01 ⏭️ Hide the 'Move tab to start/end/profile' menu items",
-        "defaultValue": "false",
+        "defaultValue": false,
         "type": "checkbox"
     },
     {
@@ -109,13 +109,13 @@
     {
         "property": "uc.hidecontext.copylink",
         "label": "\ud83d\udd17 Prioritize 'Copy Clean Link' when possible (enabled by default)",
-        "defaultValue": "true",
+        "defaultValue": true,
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.bookmark",
         "label": "\ud83d\udcd1 \ud83d\udd17 Hide 'Bookmark Link' option (enabled by default)",
-        "defaultValue": "true",
+        "defaultValue": true,
         "type": "checkbox"
     },
     {
@@ -156,7 +156,7 @@
     {
         "property": "uc.hidecontext.searchinpriv",
         "label": "\ud83d\udd24 \ud83d\udd17 🕵️ Hide 'Search in a Private Window' (enabled by default)",
-        "defaultValue": "true",
+        "defaultValue": true,
         "type": "checkbox"
     },
     {
@@ -167,7 +167,7 @@
     {
         "property": "uc.hidecontext.printselection",
         "label": "\ud83d\udd24 🖨️ Hide 'Print Selection' (enabled by default)",
-        "defaultValue": "true",
+        "defaultValue": true,
         "type": "checkbox"
     },
     {
@@ -188,19 +188,19 @@
     {
         "property": "uc.hidecontext.selectalltext",
         "label": "\ud83c\udf10 \ud83d\udd24 ✅ Hide 'Select All Text' option (enabled by default)",
-        "defaultValue": "true",
+        "defaultValue": true,
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.selectalltabs",
         "label": "\ud83d\udcd1 ✅ Hide 'Select All Tabs' (enabled by default)",
-        "defaultValue": "true",
+        "defaultValue": true,
         "type": "checkbox"
     },
     {
         "property": "uc.hidecontext.reloadtab",
         "label": "\ud83d\udcd1 🔄 Hide 'Reload Tab' (enabled by default)",
-        "defaultValue": "true",
+        "defaultValue": true,
         "type": "checkbox"
     },
     {

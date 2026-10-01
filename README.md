@@ -8,18 +8,19 @@ This version makes a few opinionated cleanups. Here's what it looks like when I 
 
 ![simplified tab context menu](image.png)   
 
-As of this commit, this theme isn't on the theme store, so it has to be installed by hand.
+As of this commit, this theme isn't on the theme store.
+
 Zen's "Import mods" button only re-downloads mods from the theme store, so it will not pick this up.
 
 ## Manual installation
 
-Tested with Zen 1.22.x. `<profile-path>` below means your Zen profile folder:
+`<profile-path>` below means your Zen profile folder:
 - Windows: `C:/Users/<user-folder>/AppData/Roaming/zen/Profiles/<profile-folder>/`
 - macOS: `~/Library/Application Support/zen/Profiles/<profile-folder>/`
 - Linux: `~/.zen/<profile-folder>/`
 
-1. Quit Zen.
-2. Check out this repo or extract the downloadable zip archive.
+1. Check out this repo or extract the downloadable zip archive.
+2. Quit Zen.
 3. Put the folder, or a symlink/junction to it, at `<profile-path>/chrome/zen-themes/korc_custom/`.
    The folder name must match the `id` in [example-zen-themes.json](example-zen-themes.json).
     - Windows (PowerShell, no admin needed):
@@ -38,6 +39,8 @@ Tested with Zen 1.22.x. `<profile-path>` below means your Zen profile folder:
 
 ## How Zen loads it
 
+Below is tested with Zen 1.22.x.
+
 Zen does not `@import` mod files. Whenever a mod is toggled, and on the first launch after a Zen update,
 it regenerates `<profile-path>/chrome/zen-themes.css` from `zen-themes.json` by pasting each registered
 mod's `chrome.css` into it. Hand edits to `zen-themes.css` are lost on every update, which is why the
@@ -45,4 +48,5 @@ mod has to be registered in `zen-themes.json` instead.
 
 - After editing `chrome.css`, flip a toggle in Settings > Mods again to re-paste it. Restarting is not enough.
 - If you installed via symlink/junction, do not use the "Remove" button in Settings > Mods. It deletes
-  the folder recursively. Disable the mod with its toggle, or delete the link by hand.
+  the mod folder from disk recursively (not just the symlink). 
+   - Disable the mod with its toggle, or delete the link manually via Explorer/Finder/file browser.

@@ -116,16 +116,18 @@
     #context_unloadTab {
       order: -7 !important;
     }
-    :nth-child(5) {
+    /* separator after the pin / duplicate group */
+    #context_tabStateSeparator {
       order: -6 !important;
     }
     #context_moveTabToGroup,
     #context_reopenInContainer,
-    #context-zen-change-workspace-tab {
+    #context_moveTabOptions {
       order: -5 !important;
     }
-    :nth-child(32) {
-      order: -4 !important;
+    /* separator after the move / reopen group (sits after #context_undoCloseTab at -3) */
+    #context_openAndOrganizeSeparator {
+      order: -2 !important;
     }
     #context_zenSplitTabs,
     #context_undoCloseTab {
@@ -138,11 +140,13 @@
     #context_zen-replace-pinned-url-with-current {
       order: 2;
     }
-    #context_zenSplitTabs[label="Split Tab (multiple selected tabs needed)"],
-    #context_zenSplitTabs[disabled="true"],
+    /* separator before the close group; Zen inserts it after #context_undoCloseTab */
+    #context_undoCloseTab + menuseparator {
+      order: 1 !important;
+    }
     #context_closeDuplicateTabs[disabled],
     #context_zen-pinned-tab-separator,
-    :nth-child(28), :nth-child(43) {
+    #context_zen-edit-tab-icon + menuseparator {
       display: none;
     }
   }
@@ -182,7 +186,7 @@
   :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
     padding-inline: 6px !important;
   }
-  menupopup > menuitem:is([type='checkbox']) .menu-iconic-left {
+  menupopup > menuitem:is([type='checkbox']) > .menu-icon {
     --menu-image: none !important;
     margin-inline-start: 4px !important;
     @media not (-moz-platform: windows) {
@@ -206,7 +210,7 @@
   }
   menupopup[needsgutter] {
     @media (-moz-platform: windows) {
-      & > menu:not([icon], .menu-iconic), & > menuitem:not([checked="true"], [icon], .menuitem-iconic) {
+      & > menu:not([icon], .menu-iconic), & > menuitem:not([checked], [icon], .menuitem-iconic) {
         padding-inline-start: 12px !important;
       }
     }
@@ -393,9 +397,7 @@
 /* Hide “Select All Tabs" option */
 @media -moz-pref("uc.hidecontext.selectalltabs") {
   #context_selectAllTabs,
-  #context_selectedAllTabs,
-  #toolbar-context-selectAllTabs,
-  #tabContextMenu > :nth-child(28) {
+  #toolbar-context-selectAllTabs {
     display: none !important;
   }
 }
@@ -411,8 +413,7 @@
 /* Hide "Duplicate Tab" */
 @media -moz-pref("uc.hidecontext.duplicatetab") {
   #context_duplicateTab,
-  #context_duplicateTabs,
-  #tabContextMenu > :nth-child(21) {
+  #context_duplicateTabs {
     display: none !important;
   }
 }
@@ -518,13 +519,13 @@
    * Help me fix this, hit me up on github.com/KiKaraage/ZenMods/issues */
   @media (-moz-platform: windows) {
     @media -moz-pref("uc.fixcontext.restoreicons") {
-      menupopup > menuitem[checked='true'] {
+      menupopup > menuitem[checked] {
         padding-inline-start: var(--zen-contextmenu-menuicon-margin-inline) !important;
         > .menu-text {
           padding: 0 !important;
         }
       }
-      menupopup > menuitem[checked='false'] {
+      menupopup > menuitem:is([type='checkbox'], [type='radio']):not([checked]) {
         padding-inline: calc(var(--zen-contextmenu-menuicon-margin-inline) + 0px) !important;
       }
     }
@@ -553,9 +554,6 @@
   #context_zenSplitTabs {
     --menu-image: url('chrome://browser/skin/zen-icons/sidebars-right.svg') !important;
   }
-  #context-zen-change-workspace-tab {
-    --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg') !important;
-  }
   #context-zenSplitLink {
     --menu-image: url('chrome://browser/skin/zen-icons/split.svg') !important;
   }
@@ -571,11 +569,15 @@
   #zenToolbarThemePicker {
     --menu-image: url('chrome://browser/skin/zen-icons/edit-theme.svg') !important;
   }
-  #context-video-pictureinpicture:not([checked='true']) .menu-iconic-icon {
-    list-style-image: url('chrome://browser/skin/zen-icons/media-pip.svg') !important;
+  #context-video-pictureinpicture:not([checked]) > .menu-icon {
+    content: url('chrome://browser/skin/zen-icons/media-pip.svg') !important;
+    display: revert;
+    visibility: inherit;
   }
-  #context-media-loop:not([checked='true']) .menu-iconic-icon {
-    list-style-image: url('chrome://browser/skin/zen-icons/media-loop.svg') !important;
+  #context-media-loop:not([checked]) > .menu-icon {
+    content: url('chrome://browser/skin/zen-icons/media-loop.svg') !important;
+    display: revert;
+    visibility: inherit;
   }
   
   #context-savepage {
@@ -874,8 +876,7 @@
   #context_closeTabOptions {
     --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
   }
-  #context_unloadTab,
-  #context_zenTabActions {
+  #context_unloadTab {
     --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
   }
   .customize-context-reportExtension,
@@ -935,8 +936,8 @@
     }
     /*Context Menu*/
 
-    menu > .menu-iconic-text,
-    menuitem > .menu-iconic-text,
+    menu > .menu-text,
+    menuitem > .menu-text,
     #context-navigation > .menuitem-iconic::after {
       padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
     }
